@@ -2,19 +2,138 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VM Impresión 3D</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1>VM Impresión 3D</h1>
-    <h2>Tienda Online de Impresiones 3D</h2>
+    <header>
+        <div class="logoContainer">
 
-    <p>Bienvenido a nuestra tienda. Hacé click para comenzar tu pedido.</p>
+            <img src="img/logo.png" alt="Logo VM Impresión 3D">
+        <div class="logoText">
+            <h1>VM Impresiones 3D</h1>
+            <p class="slogan">Creatividad hecha realidad</p></div>
 
-    <button onclick="iniciarPedido()">Realizar pedido</button>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#galeria">Galería</a>
+            <a href="#tienda">Tienda</a>
+            <a href="#cartSection">Carrito</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-    <!-- Vinculación con archivo JS -->
+    <section id="inicio" class="hero">
+        <h2>Diseñamos e imprimimos tus ideas</h2>
+        <p>Productos personalizados, prototipos y decoración en impresión 3D.</p>
+
+        <a href="#tienda" class="hero-link">Ver productos</a>
+    </section>
+
+    <section id="servicios">
+        <h2>Servicios</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Impresión 3D</h3>
+                <p>Piezas personalizadas en PLA y PETG.</p>
+            </div>
+
+            <div class="card">
+                <h3>Diseño 3D</h3>
+                <p>Modelado de piezas y prototipos.</p>
+            </div>
+
+            <div class="card">
+                <h3>Productos personalizados</h3>
+                <p>Regalos únicos y decoración.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <h2>Trabajos realizados</h2>
+
+        <div class="galeria">
+            <img src="img/Chimuelo_pochoclera.jpeg" alt="Pochoclera impresa en 3D">
+            <img src="img/Goku_tejido.jpeg" alt="Goku estilo crochet impreso en 3D">
+            <img src="img/Vaso_Argentina.jpeg" alt="Vaso de 1 litro impreso en 3D">
+        </div>
+    </section>
+
+    <section id="tienda">
+        <h2>Tienda de productos</h2>
+
+        <button id="abrirFormulario" type="button">Agregar producto</button>
+
+        <h3>Productos disponibles</h3>
+        <div id="productContainer"></div>
+    </section>
+
+    <section id="cartSection">
+        <h2>Carrito</h2>
+
+        <div id="carrito"></div>
+
+        <p id="total"></p>
+
+        <button type="button" onclick="vaciarCarrito()">Vaciar carrito</button>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Escribinos para tu proyecto personalizado.</p>
+
+        <form>
+            <input type="text" placeholder="Nombre">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+
+            <h3>Agregar producto</h3>
+
+            <form id="productForm">
+                <input type="text" id="name" placeholder="Nombre del producto" required>
+                <input type="number" id="price" placeholder="Precio" required>
+
+                <select id="category" required>
+                    <option value="">Seleccionar categoría</option>
+                    <option value="decoracion">Decoración</option>
+                    <option value="llaveros">Llaveros</option>
+                    <option value="pochocleras">Pochocleras</option>
+                </select>
+
+                <input type="number" id="stock" placeholder="Stock" required>
+                <select id="image" required>
+                    <option value="">Seleccionar imagen</option>
+                    <option value="img/charizard.jpg">Charizard</option>
+                    <option value="img/chimuelo_pochoclera.jpeg">Pochoclera Chimuelo</option>
+                    <option value="img/goku_tejido.jpeg">Goku</option>
+                    <option value="img/stitch_kaychain.jpg">Llavero Stitch</option>
+                    <option value="img/wordcup_Kaychain.jpeg">Copa del mundo</option>
+                    <option value="img/vaso_argentina.jpeg">Vaso de Argentina</option>
+                    <option value="img/stitch_pochoclera.jpg">Pochoclera stitch</option>
+                </select>
+
+                <button type="submit">Guardar producto</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 VM Impresión 3D</p>
+    </footer>
+
     <script src="main.js"></script>
-
 </body>
 </html>
