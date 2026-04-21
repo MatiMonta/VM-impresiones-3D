@@ -3,7 +3,7 @@
     font-family: "Rebel";
     src: url("fonts/Rebel.ttf") format("truetype");
 }
-*{
+{
     box-sizing:border-box;
 }
 
@@ -330,6 +330,9 @@ footer{
     padding:20px;
 }
 
+#toggleCurrency {
+    margin-top: 15px;
+}
 
 
 @media (max-width:768px){
